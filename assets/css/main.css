@@ -1,0 +1,39 @@
+@import './font.css';
+@import './style.css';
+@import './swiper.css';
+@import './tailwind.css';
+
+
+
+.router-link-active{
+    color: #1878F3;
+    font-weight: 500;
+}
+
+
+
+select::-ms-expand {
+    display: none;
+}
+
+
+input[type="number"],
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    /* background-color: red; */
+}
+
+::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: blue;
+}
+
+.scroll_none::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'), url('../fonts/Inter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue'), url('../fonts/Bebas-Neue.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: local('TT Firs Neue'), url('../fonts/TT-Firs-Neue.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Halvar Breitschrift_400';
+    src: local('Halvar Breitschrift_400'), url('../fonts/HalvarBreit_400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Halvar Breitschrift_500';
+    src: local('Halvar Breitschrift_500'), url('../fonts/HalvarBreit_500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Halvar Breitschrift_700';
+    src: local('Halvar Breitschrift_700'), url('../fonts/HalvarBreit_700.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'TT Interfaces';
+    src: local('TT Interfaces'), url('../fonts/TT-Interfaces.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TT Interfaces_500';
+    src: local('TT Interfaces_500'), url('../fonts/TTInterfaces-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TT Interfaces_600';
+    src: local('TT Interfaces_600'), url('../fonts/TTInterfaces-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TT Interfaces_700';
+    src: local('TT Interfaces_700'), url('../fonts/TTInterfaces-Bold.ttf') format('truetype');
+}

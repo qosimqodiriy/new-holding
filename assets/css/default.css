@@ -1,0 +1,249 @@
+.news_inner div,
+.news_inner span,
+.news_inner applet,
+.news_inner object,
+.news_inner iframe,
+.news_inner h1,
+.news_inner h2,
+.news_inner h3,
+.news_inner h4,
+.news_inner h5,
+.news_inner h6,
+.news_inner p,
+.news_inner blockquote,
+.news_inner pre,
+.news_inner a,
+.news_inner abbr,
+.news_inner acronym,
+.news_inner address,
+.news_inner big,
+.news_inner cite,
+.news_inner code,
+.news_inner del,
+.news_inner dfn,
+.news_inner em,
+.news_inner img,
+.news_inner ins,
+.news_inner kbd,
+.news_inner q,
+.news_inner s,
+.news_inner samp,
+.news_inner small,
+.news_inner strike,
+.news_inner strong,
+.news_inner sub,
+.news_inner sup,
+.news_inner tt,
+.news_inner var,
+.news_inner b,
+.news_inner u,
+.news_inner i,
+.news_inner center,
+.news_inner dl,
+.news_inner dt,
+.news_inner dd,
+.news_inner ol,
+.news_inner ul,
+.news_inner li,
+.news_inner fieldset,
+.news_inner form,
+.news_inner label,
+.news_inner legend,
+.news_inner table,
+.news_inner caption,
+.news_inner tbody,
+.news_inner tfoot,
+.news_inner thead,
+.news_inner tr,
+.news_inner th,
+.news_inner td,
+.news_inner article,
+.news_inner aside,
+.news_inner canvas,
+.news_inner details,
+.news_inner embed,
+.news_inner figure,
+.news_inner figcaption,
+.news_inner footer,
+.news_inner header,
+.news_inner hgroup,
+.news_inner menu,
+.news_inner nav,
+.news_inner output,
+.news_inner ruby,
+.news_inner section,
+.news_inner summary,
+.news_inner time,
+.news_inner mark,
+.news_inner audio,
+.news_inner video {
+    /* margin: 0; */
+    /* padding: 0; */
+    /* border: 0; */
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+.news_inner article,
+.news_inner aside,
+.news_inner details,
+.news_inner figcaption,
+.news_inner figure,
+.news_inner footer,
+.news_inner header,
+.news_inner hgroup,
+.news_inner menu,
+.news_inner nav,
+.news_inner section {
+    display: block;
+}
+
+.news_inner body {
+    line-height: 1;
+}
+
+.news_inner ol,
+.news_inner ul {
+    list-style: none;
+}
+
+.news_inner blockquote,
+.news_inner q {
+    quotes: none;
+}
+
+.news_inner blockquote:before,
+.news_inner blockquote:after,
+.news_inner q:before,
+.news_inner q:after {
+    content: '';
+    content: none;
+}
+
+.news_inner table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ===== CUSTOM RESET ===== */
+
+.news_inner object {
+    outline: none;
+    display: block;
+    overflow: hidden
+}
+
+/* force redraw on IE8, fix outline/scroll bug on Firefox 3.6, remove unnecessary margin (copied from swffit)  */
+.news_inner textarea {
+    overflow: auto
+}
+
+/* fix IE */
+.news_inner iframe {
+    border: 0
+}
+
+/* fix line-height [https://gist.github.com/413930] */
+.news_inner sup,
+.news_inner sub {
+    line-height: 0;
+    font-size: .75em;
+    position: relative;
+    vertical-align: baseline
+}
+
+.news_inner sup {
+    top: -0.5em
+}
+
+.news_inner sub {
+    bottom: -0.25em
+}
+
+
+/* ========================= GENERAL TAGS ======================== */
+
+.news_inner h1,
+.news_inner h2,
+.news_inner h3,
+.news_inner h4,
+.news_inner h5,
+.news_inner h6 {
+    margin: 1.5em 0 .833em;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.news_inner h1 {
+    font-size: 2em
+}
+
+.news_inner h2 {
+    font-size: 1.6em
+}
+
+.news_inner h3 {
+    font-size: 1.4em
+}
+
+.news_inner h4 {
+    font-size: 1.2em
+}
+
+.news_inner h5 {
+    font-size: 1.1em
+}
+
+.news_inner h6 {
+    font-size: 1em
+}
+
+.news_inner p {
+    margin: 1em 0
+}
+
+.news_inner small {
+    font-size: .833em
+}
+
+.news_inner em,
+.news_inner i {
+    font-style: italic
+}
+
+.news_inner strong,
+.news_inner b {
+    font-weight: bold
+}
+
+.news_inner code,
+.news_inner pre {
+    font-family: monospace
+}
+
+.news_inner a ,
+.news_inner a:hover,
+.news_inner a:focus {
+    text-decoration: none
+}
+
+.news_inner a ,
+.news_inner a:hover,
+.news_inner a:active {
+    outline: none
+}
+
+.news_inner hr {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-top: 1px solid #aaa;
+    clear: both;
+    margin: 2em 0
+}
+
+.news_inner blockquote {
+    padding: 0.2em 1em 0.2em 2em;
+    border-left: 3px solid #eee
+}
