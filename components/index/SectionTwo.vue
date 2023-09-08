@@ -103,23 +103,13 @@ export default {
             required: true,
         },
     },
-    methods: {},
+    
+    methods: {
+
+    },
+
     mounted() {
-        // window.addEventListener('scroll', (event) => {
-        //     // console.log(window);
-        //     // console.log(window.innerWidth);
-        //     // console.log(window.screen.height);
-        //     if(this.$route.path == '/') {
-        //         // console.log(window.pageYOffset);
-        //         // console.log(window.innerWidth);
-        //         // console.log(window.screen.width);
-        //         if(window.innerWidth > 800) {
-        //             let bg = document.querySelector('.bg');
-        //             bg.style.backgroundSize = window.pageYOffset + 50 + 'px';
-        //             bg.style.transform = `translateX(${window.screen.width - window.pageYOffset - 800}px`
-        //         }
-        //     }
-        // })
+        
     },
 }
 </script>

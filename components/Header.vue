@@ -88,7 +88,6 @@ export default {
             
             setTimeout(() => {
                 if(this.$route.path == '/' || this.$route.path == '/about'|| this.$route.path == '/holdings' || this.$route.name == 'business-slug') {
-                    console.log("Path name shu");
                     this.color = 'white';
                     this.bg_color = 'black';
                     sessionStorage.setItem('color', 'white');
@@ -111,7 +110,6 @@ export default {
 
     methods: {
         changeLang(lang_code, text) {
-            console.log(lang_code);
             this.lang = false;
             this.lang_value = text;
             this.$i18n.locale = lang_code;
@@ -122,17 +120,12 @@ export default {
     mounted() {
         this.load = true;
         this.path = this.$route.path;
-        console.log(this.$route.name);
 
         if(this.$route.path == '/' || this.$route.path == '/about'|| this.$route.path == '/holdings' || this.$route.name == 'business-slug') {
-            console.log("Path name shu");
             this.color = 'white';
             this.bg_color = 'black';
             sessionStorage.setItem('color', 'white');
             sessionStorage.setItem('bg_color', 'black');
-
-            console.log(this.color);
-            console.log(this.bg_color);
         } else {
             this.color = 'black';
             this.bg_color = 'white';

@@ -10,8 +10,7 @@
                 <img class="w-16 md:w-20 lg:w-24 2xl:w-36 h-16 md:h-20 lg:h-24 2xl:h-36" src="../../assets/icons/arrow-up-right.png" alt="">
             </a>
 
-            <NuxtLink v-else :to="`/business/bu_slug_index_pagedan`" class="flex items-center gap-24 mb-40 lg:mb-auto">
-            <!-- <NuxtLink v-else :to="`/business/${item.slug}`" class="flex items-center gap-24 mb-40 lg:mb-auto"> -->
+            <NuxtLink v-else :to="`/business/${item.slug}`" class="flex items-center gap-24 mb-40 lg:mb-auto">
                 <p class="text-white text-18 md:text-20 lg:text-24 2xl:text-40 font-interfaces_500 font-medium leading-120">{{ item.title }}</p>
                 <img class="w-16 md:w-20 lg:w-24 2xl:w-36 h-16 md:h-20 lg:h-24 2xl:h-36" src="../../assets/icons/arrow-up-right.png" alt="">
             </NuxtLink>

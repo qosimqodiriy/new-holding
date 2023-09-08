@@ -1,8 +1,8 @@
 <template>
     <div class="">
         <div class="mb-40 relative">
-            <div class="card_bg w-92% h-6 lg:h-12 xl:h-20 2xl:h-24 mx-auto"></div>
-            <div class="card_bg w-96% h-6 lg:h-12 xl:h-20 2xl:h-24 mx-auto"></div>
+            <div class="card_bg w-92% h-6 md:h-10 lg:h-12 xl:h-20 2xl:h-24 mx-auto"></div>
+            <div class="card_bg w-96% h-6 md:h-10 lg:h-12 xl:h-20 2xl:h-24 mx-auto"></div>
             <img class="absolute bottom-0 left-0 right-0" src="../assets/images/carier_bg.png" alt="">
             <div class="w-full py-24 lg:pt-32 pb-28 lg:pb-40 border border-grey">
                 <p class="font-interfaces_600 font-semibold text-24 lg:text-28 xl:text-32 2xl:text-40 mb-24 lg:mb-32 text-center">{{ $t('about_text_2') }}</p>

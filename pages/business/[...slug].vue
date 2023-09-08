@@ -3,7 +3,7 @@
     <section-two   />
     <section-three />
     <section-four  />
-    <section-five  />
+    <!-- <section-five  /> -->
     <contact-box   />
     <section-six   />
 </template>

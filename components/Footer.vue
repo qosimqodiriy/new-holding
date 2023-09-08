@@ -8,7 +8,7 @@
                 </div>
 
                 <a :href="item.link" target="_blank" v-for="item in holdings" :key="item.id" class="w-full md:w-auto text-center p-16 px-40 text-white text-14 lg:text-20 font-medium font-interfaces_500 border border-grey_8">{{ item.title }}</a>
-                <nuxt-link :to="`/business/${item.slug}`" v-for="item in business" :key="item.id" class="w-full md:w-auto text-center p-16 px-40 text-white text-14 lg:text-20 font-medium font-interfaces_500 border border-grey_8">{{ item.title }}</nuxt-link>
+                <nuxt-link :to="`/business/${item.slug}`" v-for="item in business" :key="item.id" class="w-full md:w-auto p-16 px-40 border border-grey_8"><p class="text-white text-14 lg:text-20 text-center font-medium font-interfaces_500">{{ item.title }}</p></nuxt-link>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-40 mb-16">
@@ -71,14 +71,15 @@ export default {
     },
 
     methods: {
-        getInfo() {
+        async getInfo() {
             if(this.holdings.length == 0 || this.business.length == 0) {
                 if(sessionStorage.getItem('holdings')) {
                     this.holdings = JSON.parse(sessionStorage.getItem('holdings'));
-                }
+                } else  setTimeout(() => { this.getInfo() }, 100);
+
                 if(sessionStorage.getItem('business')) {
                     this.business = JSON.parse(sessionStorage.getItem('business'));
-                }
+                } else  setTimeout(() => { this.getInfo() }, 100);
 
                 if(sessionStorage.getItem('static_infos')) {
                     this.data = JSON.parse(sessionStorage.getItem('static_infos'));
@@ -87,7 +88,7 @@ export default {
                         this.nbm_faks = this.data.nbm.split(',')[1];
                         this.nbm_phone = this.data.nbm.split(',')[0];
                     }
-                }
+                } else  setTimeout(() => { this.getInfo() }, 100);
             } else {
                 setTimeout(() => {
                     this.getInfo()
@@ -97,7 +98,7 @@ export default {
     },
 
     mounted() {
-        this.getInfo()        
+        this.getInfo()    
     }
 }
 </script>

@@ -78,9 +78,11 @@
                 </div>
             </div>
 
-            <p class="text-black font-interfaces_600 font-semibold text-24 lg:text-28 xl:text-32 2xl:text-40 mb-24 lg:mb-30">{{ $t('main_text_24') }}</p>
+            <partners-box />
 
-            <Partners />
+            <!-- <p class="text-black font-interfaces_600 font-semibold text-24 lg:text-28 xl:text-32 2xl:text-40 mb-24 lg:mb-30">{{ $t('main_text_24') }}</p>
+
+            <Partners /> -->
         </div>
     </section>
 </template>
@@ -88,6 +90,7 @@
 
 <script>
 import axios from 'axios'
+import PartnersBox from './PartnersBox.vue';
 
 export default {
     data() {
@@ -103,13 +106,17 @@ export default {
         }
     },
 
+    components: {
+        PartnersBox,
+    },
+
     methods: {
         async getItems() { 
             this.loading = true;
             const response = await axios.get('https://holdings.pythonanywhere.com/api/static_infos');
             this.loading = false;
-            console.log("static_infos");
-            console.log(response.data);
+            // console.log("static_infos");
+            // console.log(response.data);
             this.data = response.data;
 
 

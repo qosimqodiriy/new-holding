@@ -1,6 +1,6 @@
 <template>
     <div class="my_container py-60 lg:pt-80">
-        <div class="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-3 gap-24">
+        <div class="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-3 items-start gap-24">
             <div class="lg:col-span-3 xl:col-span-2">
                 <div class="w-full h-300 md:h-500  overflow-hidden mb-24 border border-grey_8">
                     <div class="w-full h-full" v-html="data_iframe"></div>
@@ -64,7 +64,8 @@
                 </div>
 
                 <div class="flex flex-col 2xl:flex-row gap-16">
-                    <div class="w-full 2xl:w-50% p-16 border border-grey_8">
+                    <div id="g-recaptcha"></div>
+                    <!-- <div class="w-full 2xl:w-50% p-16 border border-grey_8">
                         <div class="flex items-center justify-between gap">
                             <div class="flex items-center gap-10">
                                 <input v-model="captcha" class="w-24 h-24" type="checkbox" name="recaptcha" id="recaptcha" required>
@@ -72,7 +73,7 @@
                             </div>
                             <img class="w-46" src="../../assets/icons/recaptcha.png" alt="recaptcha">
                         </div>
-                    </div>
+                    </div> -->
 
                     <button :disabled="loading ? true : false" class="flex w-full 2xl:w-50% items-center justify-center gap-8 px-24 py-16 bg-purple">
                         <p class="text-14 font-interfaces_700 font-bold uppercase text-white">{{ $t('main_text_23') }}</p>
@@ -88,6 +89,21 @@
 
 <script>
 import axios from 'axios'
+
+useHead({
+    // title: 'Contact lalala',
+    // titleTemplate: 'Gears - %s',
+    meta: [
+        { name: 'description', content: 'Let’s discuss your work together.'}
+    ],
+    script: [
+        {
+            hid: 'recaptcha',
+            src: 'https://www.google.com/recaptcha/api.js?trustedtypes=true?onload=onloadCallback&render=explicit',
+            defer: true
+        },
+    ]
+})
 
 export default {
     data() {
@@ -143,8 +159,8 @@ export default {
         }
     },
 
-    mounted() {
-        this.getItems()
+    async mounted() {
+        this.getItems();
     }
 }
 </script>

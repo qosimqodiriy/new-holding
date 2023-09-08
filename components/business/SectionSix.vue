@@ -6,14 +6,14 @@
 
                 <div class="box absolute bottom-16 left-16 right-16 flex flex-wrap flex-col md:flex-row justify-between gap-24 rounded-8 xl:rounded-16 p-16 xl:p-24 2xl:px-40 bg-white">
                     <div class="">
-                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">Местоположения</h3>
+                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">{{ $t('inner_text_21') }}</h3>
                         <div class="flex items-center gap-12">
                             <img class="w-26 h-26 2xl:w-36 2xl:h-36" src="../../assets/icons/Location-blue.png" alt="">
                             <p class="text-14 2xl:text-18 font-interfaces_500 text-black md:max-w-400 2xl:max-w-565">Республика Узбекистан. Ташкентская обл. Зангиота р-н КФЙ Эркин, Кольцевая дорога Ташкент-Термиз М-39 .</p>
                         </div>
                     </div>
                     <div class="">
-                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">Тел.номер</h3>
+                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">{{ $t('inner_text_22') }}</h3>
                         <div class="flex items-center gap-12">
                             <img class="w-26 h-26 2xl:w-36 2xl:h-36" src="../../assets/icons/Call-blue.png" alt="">
                             <div class="flex md:flex-col xl:flex-row 2xl:flex-col gap-x-10 gap-y-5">
@@ -23,14 +23,14 @@
                         </div>
                     </div>
                     <div class="">
-                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">Эл.адрес</h3>
+                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">{{ $t('inner_text_23') }}</h3>
                         <div class="flex items-center gap-12">
                             <img class="w-26 h-26 2xl:w-36 2xl:h-36" src="../../assets/icons/Message-blue.png" alt="">
                             <p class="text-14 2xl:text-18 font-interfaces_500 text-black max-w-565">info@jipgroup.uz</p>
                         </div>
                     </div>
                     <div class="">
-                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">Социальная сеть</h3>
+                        <h3 class="text-16 2xl:text-20 font-halvar_breit_500 text-grey mb-8 2xl:mb-16">{{ $t('inner_text_24') }}</h3>
                         <div class="flex items-center gap-20 2xl:gap-40">
                             <a href="#" target="_blank"><img class="w-24 h-24 2xl:w-36 2xl:h-36" src="../../assets/icons/youtube-blue.png" alt=""></a>
                             <a href="#" target="_blank"><img class="w-24 h-24 2xl:w-36 2xl:h-36" src="../../assets/icons/facebook-blue.png" alt=""></a>

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col w-full min-h-300 max-h-500 relative aspect-3/4">
+    <div class="flex flex-col w-full min-h-200 max-h-500 relative shrink-0 aspect-3/4">
         <img class="w-full h-full max-h-full object-cover object-center" :src="item.image" alt="">
 
         <div class="box flex-auto border border-grey_40 absolute left-4 md:left-8 right-4 md:right-8 bottom-4 md:bottom-8 p-6 md:p-16">
@@ -26,6 +26,7 @@ export default {
 
 <style scoped>
 .box {
+    position: absolute;
     backdrop-filter: blur(40px);
     background: rgba(0, 0, 0, 0.16);
 }

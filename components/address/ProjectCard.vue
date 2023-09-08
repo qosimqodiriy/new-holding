@@ -27,8 +27,8 @@
                     <img class="w-16 h-16 lg:w-22 lg:h-22" src="../../assets/icons/arrow-up-right.png" alt="">
                 </a>
     
-                <NuxtLink v-else :to="`/business/bu_slug_uzimdan`" class="inline-flex items-center gap-24 mb-12 md:mb-16 lg:mb-24 xl:mb-32 2xl:mb-40">
-                <!-- <NuxtLink v-else :to="`/business/${item.slug}`" class="inline-flex items-center gap-24 mb-12 md:mb-16 lg:mb-24 xl:mb-32 2xl:mb-40"> -->
+                <!-- <NuxtLink v-else :to="`/business/bu_slug_uzimdan`" class="inline-flex items-center gap-24 mb-12 md:mb-16 lg:mb-24 xl:mb-32 2xl:mb-40"> -->
+                <NuxtLink v-else :to="`/business/${item.slug}`" class="inline-flex items-center gap-24 mb-12 md:mb-16 lg:mb-24 xl:mb-32 2xl:mb-40">
                     <p class="text-16 md:text-18 xl:text-20 2xl:text-24 text-white font-interfaces">Перейти на сайт</p>
                     <img class="w-16 h-16 lg:w-22 lg:h-22" src="../../assets/icons/arrow-up-right.png" alt="">
                 </NuxtLink>

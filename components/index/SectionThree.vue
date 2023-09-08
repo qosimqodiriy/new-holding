@@ -14,10 +14,7 @@
             </div>
 
             <!-- Yangiliklar -->
-            <div class="bg-black">
-                <p class="text-white font-interfaces_600 font-semibold text-24 lg:text-28 xl:text-32 2xl:text-40 mb-24 lg:mb-30">{{ $t('main_text_13') }}</p>
-                <news-swiper />
-            </div>
+            <news-swiper />
 
         </div>
     </section>
@@ -48,8 +45,8 @@ export default {
             this.loading = true;
             const response = await axios.get('https://holdings.pythonanywhere.com/api/holdings');
             this.loading = false;
-            console.log("holdings index page");
-            console.log(response.data);
+            // console.log("holdings index page");
+            // console.log(response.data);
             this.holdings = response.data.results;
             this.data_count = response.data.count;
 
@@ -62,8 +59,8 @@ export default {
             this.loading = true;
             const response = await axios.get('https://holdings.pythonanywhere.com/api/business');
             this.loading = false;
-            console.log("Business index page");
-            console.log(response.data);
+            // console.log("Business index page");
+            // console.log(response.data);
             this.business = response.data.results;
             this.data_count = response.data.count;
 

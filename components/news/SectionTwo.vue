@@ -25,38 +25,49 @@
         <hr class="border-b border-grey_8 my-60 lg:my-80" >
 
         <div class="">
-            <p class="text-black font-interfaces_600 font-semibold text-24 md:text-26 lg:text-28 xl:text-32 2xl:text-40 mb-30">{{ $t('news_text_1') }}</p>
+            <div class="flex items-center justify-between mb-24 lg:mb-30">
+                <p class="text-black font-interfaces_600 font-semibold text-24 md:text-26 lg:text-28 xl:text-32 2xl:text-40">{{ $t('news_text_1') }}</p>
 
-            <div>
-                <swiper
-                    :slidesPerView="1"
-                    :slidesPerGroup="1"
-                    :spaceBetween="24"
-                    :speed="800"
-                    :loop="false" 
-                    
-                    :breakpoints="{
-                        '769': {
-                            slidesPerView: 2,
-                            slidesPerGroup: 2,
-                        },
-                        '1025': {
-                            slidesPerView: 3,
-                            slidesPerGroup: 3,
-                        },
-                        '1337': {
-                            slidesPerView: 4,
-                            slidesPerGroup: 4,
-                        },
-                    }" 
-                    :modules="modules"
-                    class="mySwiper"
-                >
-                    <swiper-slide v-for="item in data.other_news" :key="item.id">
-                        <news-card :item="item" :line_clamp="true" />
-                    </swiper-slide>
-                </swiper>
+                <div class="flex items-center border border-grey_24 p-6 gap-16 lg:gap-24 rounded-4 bg-white">
+                    <div @click="clickPrev()" class="p-6 lg:p-10 cursor-pointer"><img class="w-24 h-24" src="../../assets/icons/arrow-left-grey.png" alt=""></div>
+                    <img class="h-24" src="../../assets/icons/line_swiper.png" alt="">
+                    <div @click="clickNext()" class="p-6 lg:p-10 cursor-pointer"><img class="w-24 h-24 rotate-180" src="../../assets/icons/arrow-left-grey.png" alt=""></div>
+                </div>
             </div>
+            
+
+            <swiper
+                :slidesPerView="1"
+                :slidesPerGroup="1"
+                :spaceBetween="12"
+                :speed="800"
+                :loop="false" 
+                :navigation="true"
+                
+                :breakpoints="{
+                    '769': {
+                        spaceBetween: 16,
+                        slidesPerView: 2,
+                        slidesPerGroup: 1,
+                    },
+                    '1025': {
+                        spaceBetween: 20,
+                        slidesPerView: 3,
+                        slidesPerGroup: 1,
+                    },
+                    '1337': {
+                        spaceBetween: 24,
+                        slidesPerView: 4,
+                        slidesPerGroup: 1,
+                    },
+                }" 
+                :modules="modules"
+                class="mySwiper news_inner_box"
+            >
+                <swiper-slide v-for="item in data.other_news" :key="item.id">
+                    <news-card :item="item" :line_clamp="true" />
+                </swiper-slide>
+            </swiper>
         </div>
     </div>
 </template>
@@ -65,11 +76,12 @@
 <script>
 import 'swiper/css';
 import axios from 'axios'
-import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import '../../assets/css/default.css';
-import { Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Mousewheel, Navigation } from 'swiper/modules';
 
+let prev, next;
 export default {
     data() {
         return {
@@ -86,11 +98,19 @@ export default {
 
     setup() {
         return {
-            modules: [Mousewheel],
+            modules: [Mousewheel, Navigation],
         };
     },
 
     methods: {
+        clickPrev() {
+            prev.click()
+        },
+
+        clickNext() {
+            next.click()
+        },
+
         async getItems() {
             this.loading = true;
             const response = await axios.get(`https://holdings.pythonanywhere.com/api/news/${this.slug}`, {
@@ -102,6 +122,16 @@ export default {
             console.log("Yangilik Inner");
             console.log(response.data);
             this.data = response.data;
+
+            setTimeout(() => {
+                let element = document.querySelector('.news_inner_box');
+                console.log(element);
+                prev = element.children[1];
+                next = element.children[2];
+
+                prev.style.display = 'none';
+                next.style.display = 'none';
+            }, 500);
         },
 
         formatDate(date, type) {

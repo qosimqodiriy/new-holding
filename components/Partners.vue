@@ -53,8 +53,9 @@ export default {
     data() {
         return {
             data: [],
-            border: false,
             data_count: 0,
+            border: false,
+            loading: false,
         }
     },
     
