@@ -7,7 +7,7 @@
             <div class="flex flex-col w-full h-full">
                 <p class="text-white text-32 md:text-40 lg:text-50 xl:text-56 2xl:text-72 text-center font-interfaces font-bold leading-150 mb-auto">Jahon Invest Holding</p>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 md:border border-grey gap-8 lg:gap-0">
+                <div class="grid grid-cols-2 lg:grid-cols-4 lg:border border-grey gap-8 lg:gap-0">
                     <div class="flex items-center justify-center py-30 md:py-46 lg:py-64 2xl:py-90 px-20 border border-grey">
                         <p class="text-white text-16 font-interfaces md:font-medium lg:font-semibold md:text-20 lg:text-24 2xl:text-28 text-center">Premium Pipe Print</p>
                     </div>

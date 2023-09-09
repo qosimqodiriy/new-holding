@@ -15,7 +15,7 @@
                             <img v-for="(item, index) in images" :key="index" class="swiper_img block md:absolute top-0 left-0 w-full h-auto md:h-full object-cover object-center" :class="active == index ? 'active_img' : 'not_active_img'" :src="item.image" alt="">
                         </div>
 
-                        <div class="news_inner lg:max-w-700 relative">
+                        <div class="news_inner lg:max-w-700 relative pr-10 h-400 xl:h-500 md:min-h-400 overflow-y-scroll carier_text">
                             <p v-if="images[active] && images[active].desc" v-html="images[active].desc"></p>
                         </div>
                     </div>
@@ -61,10 +61,12 @@ export default {
 
         async getItems() {
             this.loading = true;
-            const response = await axios.get('https://holdings.pythonanywhere.com/api/cariers');
+            const response = await axios.get('https://holdings.pythonanywhere.com/api/cariers', {
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
+                }
+            });
             this.loading = false;
-            console.log("Kariyera");
-            console.log(response.data);
             this.images = response.data.results;
         },
     },
@@ -101,6 +103,15 @@ export default {
     transform: translateX(100%);
 }
 
+.carier_text::-webkit-scrollbar {
+    width: 3px;
+}
+
+.carier_text::-webkit-scrollbar-thumb {
+    width: 3px;
+    border-radius: 4px;
+}
+
 @media (max-width: 768px) {
     .swiper_img.active_img {
         opacity: 1;
@@ -115,5 +126,9 @@ export default {
         display: none;
         transform: translateX(100%);
     } 
+
+    .carier_text::-webkit-scrollbar {
+        width: 2px;
+    }
 }
 </style>

@@ -72,8 +72,7 @@ export default {
                 this.name = '';
                 this.phone = '';
                 this.captcha = false;
-                this.loading = false;x
-                console.log(response);
+                this.loading = false;
             })
             .catch(error => {
                 console.log(error)

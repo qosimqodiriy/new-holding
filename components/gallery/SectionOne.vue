@@ -87,13 +87,11 @@ export default {
                     page_size: 9,
                     type: this.type,
                 },
-                Headers: {
-                    Language: 'en',
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
                 }
             });
             this.loading = false;
-            console.log("Gallery");
-            console.log(response.data);
             this.images = response.data.results;
             this.data_count = response.data.count;
         },

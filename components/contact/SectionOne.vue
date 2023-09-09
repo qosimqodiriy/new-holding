@@ -36,10 +36,10 @@
                         </div>
 
                         <div class="flex items-center gap-40">
-                            <a :href="data.youtube" target="_blank"><img class="w-32 h-32" src="../../assets/icons/youtube-black.png" alt=""></a>
-                            <a :href="data.facebook" target="_blank"><img class="w-32 h-32" src="../../assets/icons/facebook-black.png" alt=""></a>
-                            <a :href="data.telegram" target="_blank"><img class="w-32 h-32" src="../../assets/icons/telegram-black.png" alt=""></a>
-                            <a :href="data.instagram" target="_blank"><img class="w-32 h-32" src="../../assets/icons/instagram-black.png" alt=""></a>
+                            <a v-if="data.youtube" :href="data.youtube" target="_blank"><img class="w-32 h-32" src="../../assets/icons/youtube-black.png" alt=""></a>
+                            <a v-if="data.facebook" :href="data.facebook" target="_blank"><img class="w-32 h-32" src="../../assets/icons/facebook-black.png" alt=""></a>
+                            <a v-if="data.telegram" :href="data.telegram" target="_blank"><img class="w-32 h-32" src="../../assets/icons/telegram-black.png" alt=""></a>
+                            <a v-if="data.instagram" :href="data.instagram" target="_blank"><img class="w-32 h-32" src="../../assets/icons/instagram-black.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                 </div>
 
                 <div class="flex flex-col 2xl:flex-row gap-16">
-                    <div id="g-recaptcha"></div>
-                    <!-- <div class="w-full 2xl:w-50% p-16 border border-grey_8">
+                    <!-- <div id="g-recaptcha"></div> -->
+                    <div class="w-full 2xl:w-50% p-16 border border-grey_8">
                         <div class="flex items-center justify-between gap">
                             <div class="flex items-center gap-10">
                                 <input v-model="captcha" class="w-24 h-24" type="checkbox" name="recaptcha" id="recaptcha" required>
@@ -73,7 +73,7 @@
                             </div>
                             <img class="w-46" src="../../assets/icons/recaptcha.png" alt="recaptcha">
                         </div>
-                    </div> -->
+                    </div>
 
                     <button :disabled="loading ? true : false" class="flex w-full 2xl:w-50% items-center justify-center gap-8 px-24 py-16 bg-purple">
                         <p class="text-14 font-interfaces_700 font-bold uppercase text-white">{{ $t('main_text_23') }}</p>
@@ -90,20 +90,20 @@
 <script>
 import axios from 'axios'
 
-useHead({
-    // title: 'Contact lalala',
-    // titleTemplate: 'Gears - %s',
-    meta: [
-        { name: 'description', content: 'Let’s discuss your work together.'}
-    ],
-    script: [
-        {
-            hid: 'recaptcha',
-            src: 'https://www.google.com/recaptcha/api.js?trustedtypes=true?onload=onloadCallback&render=explicit',
-            defer: true
-        },
-    ]
-})
+// useHead({
+//     title: 'Contact lalala',
+//     titleTemplate: 'Gears - %s',
+//     meta: [
+//         { name: 'description', content: 'Let’s discuss your work together.'}
+//     ],
+//     script: [
+//         {
+//             hid: 'recaptcha',
+//             src: 'https://www.google.com/recaptcha/api.js?trustedtypes=true?onload=onloadCallback&render=explicit',
+//             defer: true
+//         },
+//     ]
+// })
 
 export default {
     data() {
@@ -123,10 +123,12 @@ export default {
     methods: {
         async getItems() { 
             this.loading = true;
-            const response = await axios.get('https://holdings.pythonanywhere.com/api/static_infos');
+            const response = await axios.get('https://holdings.pythonanywhere.com/api/static_infos', {
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
+                }
+            });
             this.loading = false;
-            console.log("static_infos");
-            console.log(response.data);
             this.data = response.data;
 
             this.data_iframe = this.data.map

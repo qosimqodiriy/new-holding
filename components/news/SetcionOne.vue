@@ -47,12 +47,10 @@ export default {
                     page_size: 12,
                 },
                 headers: {
-                    "Language": "en",
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
                 }
             });
             this.loading = false;
-            console.log("Yangilik");
-            console.log(response.data);
             this.data = response.data.results;
             this.data_count = response.data.count;
         },

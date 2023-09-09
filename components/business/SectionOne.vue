@@ -33,12 +33,7 @@ export default {
     },
     
     mounted() {
-        console.log(this.$route);
-
-        // this.color = 'white';
-        // this.bg_color = 'black';
-        // sessionStorage.setItem('color', 'white');
-        // sessionStorage.setItem('bg_color', 'black');
+        // console.log(this.$route);
     }
 }
 </script>

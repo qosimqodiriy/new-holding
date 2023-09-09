@@ -115,17 +115,14 @@ export default {
             this.loading = true;
             const response = await axios.get(`https://holdings.pythonanywhere.com/api/news/${this.slug}`, {
                 headers: {
-                    "Language": "en",
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
                 }
             });
             this.loading = false;
-            console.log("Yangilik Inner");
-            console.log(response.data);
             this.data = response.data;
 
             setTimeout(() => {
                 let element = document.querySelector('.news_inner_box');
-                console.log(element);
                 prev = element.children[1];
                 next = element.children[2];
 

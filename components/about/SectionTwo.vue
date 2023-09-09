@@ -42,12 +42,10 @@ export default {
             this.loading = true;
             const response = await axios.get('https://holdings.pythonanywhere.com/api/workers', {
                 headers: {
-                    Language: 'en'
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
                 }
             });
             this.loading = false;
-            console.log("Ishchilar");
-            console.log(response.data);
             this.data = response.data.results;
             this.data_count = response.data.count;
 

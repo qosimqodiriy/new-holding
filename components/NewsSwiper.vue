@@ -96,10 +96,11 @@ export default {
                     page: page,
                     page_size: 10,
                 },
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
+                }
             });
             this.loading = false;
-            // console.log("Yangiliklar");
-            // console.log(response.data);
             this.data = response.data.results;
             this.data_count = response.data.count;
         },

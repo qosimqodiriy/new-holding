@@ -4,7 +4,6 @@
         <section-one color="white" bg_color="black" />
         <section-two></section-two>
         <section-three></section-three>
-        
     </div>
 </template>
 

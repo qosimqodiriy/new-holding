@@ -43,10 +43,12 @@ export default {
     methods: {
         async getHoldings() {
             this.loading = true;
-            const response = await axios.get('https://holdings.pythonanywhere.com/api/holdings');
+            const response = await axios.get('https://holdings.pythonanywhere.com/api/holdings', {
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
+                }
+            });
             this.loading = false;
-            // console.log("holdings index page");
-            // console.log(response.data);
             this.holdings = response.data.results;
             this.data_count = response.data.count;
 
@@ -57,10 +59,12 @@ export default {
 
         async getBusiness() {
             this.loading = true;
-            const response = await axios.get('https://holdings.pythonanywhere.com/api/business');
+            const response = await axios.get('https://holdings.pythonanywhere.com/api/business', {
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
+                }
+            });
             this.loading = false;
-            // console.log("Business index page");
-            // console.log(response.data);
             this.business = response.data.results;
             this.data_count = response.data.count;
 

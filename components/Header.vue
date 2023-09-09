@@ -111,9 +111,12 @@ export default {
     methods: {
         changeLang(lang_code, text) {
             this.lang = false;
-            this.lang_value = text;
-            this.$i18n.locale = lang_code;
-            localStorage.setItem('language', lang_code);
+            if(localStorage.getItem('language') != lang_code) {
+                this.lang_value = text;
+                this.$i18n.locale = lang_code;
+                localStorage.setItem('language', lang_code);
+                window.location.reload();
+            }
         },
     },
     

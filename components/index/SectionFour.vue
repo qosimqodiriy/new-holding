@@ -79,10 +79,6 @@
             </div>
 
             <partners-box />
-
-            <!-- <p class="text-black font-interfaces_600 font-semibold text-24 lg:text-28 xl:text-32 2xl:text-40 mb-24 lg:mb-30">{{ $t('main_text_24') }}</p>
-
-            <Partners /> -->
         </div>
     </section>
 </template>
@@ -113,10 +109,12 @@ export default {
     methods: {
         async getItems() { 
             this.loading = true;
-            const response = await axios.get('https://holdings.pythonanywhere.com/api/static_infos');
+            const response = await axios.get('https://holdings.pythonanywhere.com/api/static_infos', {
+                headers: {
+                    Language: this.$i18n.locale ? this.$i18n.locale : '',
+                }
+            });
             this.loading = false;
-            // console.log("static_infos");
-            // console.log(response.data);
             this.data = response.data;
 
 
@@ -143,7 +141,6 @@ export default {
                 this.commit = '';
                 this.captcha = false;
                 this.loading = false;
-                console.log(response);
             })
             .catch(error => {
                 console.log(error)
